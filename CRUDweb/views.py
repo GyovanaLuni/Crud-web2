@@ -26,10 +26,26 @@ def list_view(request):
     context = {}
 
     # add the dictionary during initialization
-    context["dataset"] = MarcarConsulta.objects.all()
+    context["consultas"] = MarcarConsulta.objects.all()
 
     return render(request, "list_view.html", context)
 
 
 def helloworld(request):
     return HttpResponse("Olá Mundo")
+
+def consulta_create(request):
+    form = MarcarConsultaForm()
+    if(request.method == 'POST'):
+        form = MarcarConsultaForm(request.POST)
+        if(form.is_valid()):
+            nome_paciente= form.cleaned_data['nome_paciente']
+            cpf = form.cleaned_data['cpf']
+            data = form.cleaned_data['data']
+            nome_medico = form.cleaned_data['nome_medico']
+            especialidade = form.cleaned_data['especialidade']
+            new_consulta = MarcarConsulta(nome_paciente=nome_paciente, cpf=cpf, especialidade=especialidade, data=data, nome_medico=nome_medico)
+            new_consulta.save()
+            return redirect('CRUDweb:list_view')
+    elif(request.method == 'GET'):
+        return render(request, 'CRUDweb/list_view.html', {'form': form})
