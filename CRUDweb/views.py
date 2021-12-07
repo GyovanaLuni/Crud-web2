@@ -4,6 +4,7 @@ from django.shortcuts import render
 from .models import MarcarConsulta
 from .forms import MarcarConsultaForm
 from django.http.response import HttpResponse
+from django.shortcuts import redirect
 
 
 def create_view(request):
@@ -31,9 +32,6 @@ def list_view(request):
     return render(request, "list_view.html", context)
 
 
-def helloworld(request):
-    return HttpResponse("Olá Mundo")
-
 def consulta_create(request):
     form = MarcarConsultaForm()
     if(request.method == 'POST'):
@@ -47,5 +45,5 @@ def consulta_create(request):
             new_consulta = MarcarConsulta(nome_paciente=nome_paciente, cpf=cpf, especialidade=especialidade, data=data, nome_medico=nome_medico)
             new_consulta.save()
             return redirect('CRUDweb:list_view')
-    elif(request.method == 'GET'):
-        return render(request, 'CRUDweb/list_view.html', {'form': form})
+    # elif(request.method == 'GET'):
+    #     return render(request, 'templates/list_view.html', {'form': form})
