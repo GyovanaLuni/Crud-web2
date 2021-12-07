@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 from .models import MarcarConsulta
 from .forms import MarcarConsultaForm
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 
 
@@ -45,5 +45,12 @@ def consulta_create(request):
             new_consulta = MarcarConsulta(nome_paciente=nome_paciente, cpf=cpf, especialidade=especialidade, data=data, nome_medico=nome_medico)
             new_consulta.save()
             return redirect('CRUDweb:list_view')
-    # elif(request.method == 'GET'):
-    #     return render(request, 'templates/list_view.html', {'form': form})
+    else:
+        form = MarcarConsultaForm()
+        return render(request, 'templates/create_view.html', {'form': form})
+
+def consulta_delete(request, id):
+    consulta = get_object_or_404(MarcarConsulta, id=id)
+    consulta.delete()
+    
+    return redirect('CRUDweb:list_view')

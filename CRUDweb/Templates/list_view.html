@@ -82,16 +82,16 @@
                     <p> <strong>Doutor(a):</strong> {{consulta.nome_medico}}, {{consulta.especialidade}}.</p>
                 </div>
                 <div id="icons">
-                    <button class="icon user">ver mais <i class="fas fa-id-card user"></i></button>
-                    <button class="icon edit">editar <i class="fas fa-user-edit edit"></i></button>
-                    <button class="icon delete">deletar <i class="fas fa-user-minus delete"></i></button>
+                    <a href=""><button class="icon user">ver mais <i class="fas fa-id-card user"></i></button></a>
+                    <a href=""><button class="icon edit">editar <i class="fas fa-user-edit edit"></i></button></a>
+                    <a href="delete/{{consulta.id}}"><button class="icon delete">deletar <i class="fas fa-user-minus delete"></i></button></a>
                 </div>
             </div>
             
         {% endfor %}
     </div>
     <div class="botoes">
-        <button id="btn-voltar"><i class="fas fa-arrow-circle-left"></i></button>
+        <a href=""><button id="btn-voltar"><i class="fas fa-arrow-circle-left"></i></button>'</a>
     </div>
 </body>
 </html>
