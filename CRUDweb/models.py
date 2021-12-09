@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class MarcarConsulta(models.Model):
     nome_paciente = models.CharField('Nome Paciente', max_length=50)
     cpf = models.CharField('CPF', max_length=11)

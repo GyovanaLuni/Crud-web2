@@ -1,20 +1,14 @@
-from pyexpat.errors import messages
-
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
-
-# Create your views here.
 from .models import MarcarConsulta
 from .forms import MarcarConsultaForm
-from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 
 
+@login_required
 def create_view(request):
-    # dictionary for initial data with
-    # field names as keys
     context = {}
 
-    # add the dictionary during initialization
     form = MarcarConsultaForm(request.POST or None)
     if form.is_valid():
         form.save()
@@ -23,19 +17,17 @@ def create_view(request):
     return render(request, "create_view.html", context)
 
 
+@login_required
 def list_view(request):
-    # dictionary for initial data with
-    # field names as keys
-    context = {}
+    context = dict()
 
-    # add the dictionary during initialization
     context["consultas"] = MarcarConsulta.objects.all()
 
     return render(request, "list_view.html", context)
 
 
+@login_required
 def consulta_create(request):
-    form = MarcarConsultaForm()
     if request.method == 'POST':
         form = MarcarConsultaForm(request.POST)
         if form.is_valid():
@@ -60,8 +52,11 @@ def consulta_delete(request, id):
     return redirect('CRUDweb:list_view')
 
 
+@login_required
 def editConsulta(request, id):
+    # Pega a consulta baseado no ID que foi pego do botao ao clicar
     consulta = get_object_or_404(MarcarConsulta, pk=id)
+    # Instancia um form daquela consulta
     form = MarcarConsultaForm(instance=consulta)
 
     if request.method == 'POST':
@@ -75,12 +70,11 @@ def editConsulta(request, id):
     else:
         return render(request, 'editconsulta.html', {'form': form, 'consulta': consulta})
 
+
+@login_required
 def list_view_id(request, id):
-    # dictionary for initial data with
-    # field names as keys
     context = {}
-
-    # add the dictionary during initialization
+    # Pega a consulta baseado no seu ID e manda para o front a consulta
     context["consulta"] = get_object_or_404(MarcarConsulta, id=id)
-
+    # Renderiza  o HTML list_view_id com a consulta que foi clicada para exibir mais detalhes
     return render(request, "list_view_id.html", context)

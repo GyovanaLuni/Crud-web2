@@ -1,5 +1,4 @@
-from django.urls import include, path
-from . import views
+from django.urls import path
 from .views import create_view
 from .views import list_view
 from .views import consulta_create

@@ -27,6 +27,30 @@
             font-family: 'Baloo Bhaijaan 2', cursive;
             overflow-x: hidden;
         }
+        #nav{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            gap: 2rem;
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+        button[class^="botao"]{
+            background: none;
+            outline: none;
+            border: none;
+            font-variant: small-caps;
+            font-size: 4vh;
+            color: white;
+            text-decoration: none;
+        }
+        .botao-sair{
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
         #container{
             display: flex;
             flex-direction: column;
@@ -106,6 +130,11 @@
     </style>
 </head>
 <body>
+    <nav>
+        <div id="nav">
+            <a class="botao-sair" href="/accounts/logout"> <button class="botao-sair">SAIR <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </nav>
     <h1> lista de pacientes </h1>
     <div id="container">
         {% for consulta in consultas %} 
@@ -131,10 +160,11 @@
         <p>&copy; Girls Dev's: </p>
         <br/>
         <div id="equipe">
-            <p><a class="dev" href="">Camila Silva</a></p>
-            <p><a class="dev" href="">Gyovana Lucena</a></p>
-            <p><a class="dev" href="">Gracielle Jose</a></p>
+            <p><a class="dev" href="https://www.linkedin.com/in/camila-camasi/" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/camilams27" target="_blank"><i class="fab fa-github"></i></a> /CamilaSilva</p>
+            <p><a class="dev" href="#" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/GyovanaLuni" target="_blank"><i class="fab fa-github"></i></a> /Gyovana Lucena</p>
+            <p><a class="dev" href="#" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="#" target="_blank"><i class="fab fa-github"></i></a> /Gracielle Jose</p>
         </div>
     </footer>
 </body>
 </html>
+

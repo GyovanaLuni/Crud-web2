@@ -1,8 +1,14 @@
-<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4006/4006511.png" >
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-<title> Atualizar Dados </title>
-{% block content %}
-<style>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4006/4006511.png" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title> Atualizar Dados </title>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
     *{
         box-sizing: border-box;
@@ -44,8 +50,10 @@
     }
     p{
         display: flex;
-        flex-direction: column;
+        gap: .5rem;
+        font-size: 3vh;
         margin: 0;
+        color: white;
     }
     input{
         height: 4vh;
@@ -119,27 +127,35 @@
         text-decoration: none;
         color: white;
     }
+    i{
+        color: white;
+    }
 </style>
-<div id="container">
-    <h1> atualizacao cadastro </h1>
-    <form method="POST">
-       <div id="formulario">
-            {% csrf_token %}
-        {{ form }}
-       </div>
-        <input type="submit" value="editar">
-    </form>
-    <div class="botoes">
-        <a href="/CRUDweb"><button id="btn-voltar"><i class="fas fa-arrow-circle-left"></i></button></a>
-    </div>
-    <footer>
-        <p>&copy; Girls Dev's: </p>
-        <br/>
-        <div id="equipe">
-            <p><a class="dev" href="">Camila Silva</a></p>
-            <p><a class="dev" href="">Gyovana Lucena</a></p>
-            <p><a class="dev" href="">Gracielle Jose</a></p>
+</head>
+<body>
+    {% block content %}
+    <div id="container">
+        <h1> atualizacao cadastro </h1>
+        <form method="POST">
+           <div id="formulario">
+                {% csrf_token %}
+            {{ form }}
+           </div>
+            <input type="submit" value="editar">
+        </form>
+        <div class="botoes">
+            <a href="/CRUDweb/list_view"><button id="btn-voltar"><i class="fas fa-arrow-circle-left"></i></button></a>
         </div>
-    </footer>
-</div>
-{% endblock %}
+    </div>
+     <footer>
+            <p>&copy; Girls Dev's: </p>
+            <br/>
+            <div id="equipe">
+                <p><a class="dev" href="https://www.linkedin.com/in/camila-camasi/" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/camilams27" target="_blank"><i class="fab fa-github"></i></a> /CamilaSilva</p>
+                <p><a class="dev" href="#" target="_blank"><i class="fab fa-linkedin"></i> </a> <a href="https://github.com/GyovanaLuni" target="_blank"><i class="fab fa-github"></i></a> /Gyovana Lucena</p>
+                <p><a class="dev" href="#" target="_blank"><i class="fab fa-linkedin"></i> </a> <a href="#" target="_blank"><i class="fab fa-github"></i></a> /Gracielle Jose</p>
+            </div>
+     </footer>
+    {% endblock %}
+</body>
+</html>
