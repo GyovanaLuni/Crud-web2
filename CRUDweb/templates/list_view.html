@@ -130,11 +130,13 @@
     </style>
 </head>
 <body>
+    {% if user.is_authenticated %}
     <nav>
         <div id="nav">
             <a class="botao-sair" href="/accounts/logout"> <button class="botao-sair">SAIR <i class="fas fa-sign-out-alt"></i></a>
         </div>
     </nav>
+    {% endif %}
     <h1> lista de pacientes </h1>
     <div id="container">
         {% for consulta in consultas %} 
@@ -144,11 +146,13 @@
                     <p><strong>Para o dia:</strong> {{consulta.data}}</p>
                     <p> <strong>Doutor(a):</strong> {{consulta.nome_medico}}, {{consulta.especialidade}}.</p>
                 </div>
+                {% if user.is_authenticated %}
                 <div id="icons">
                     <a href="ver_mais/{{ consulta.id }}"><button class="icon user">ver mais <i class="fas fa-id-card user"></i></button></a>
                     <a href="edit/{{ consulta.id }}"><button class="icon edit">editar <i class="fas fa-user-edit edit"></i></button></a>
                     <a href="delete/{{ consulta.id }}"><button class="icon delete">deletar <i class="fas fa-user-minus delete"></i></button></a>
                 </div>
+                {% endif %}
             </div>
             
         {% endfor %}

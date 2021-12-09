@@ -21,11 +21,41 @@
             width: 100vw;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-items: center;
+            justify-content: center;
             background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)) 100%, url("https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"), center no-repeat;
             background-size: cover;
             overflow-x: hidden;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            right: 5px;
+        }
+        #nav{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            gap: 2rem;
+        }
+        button[class^="botao"]{
+            background: none;
+            outline: none;
+            border: none;
+            font-variant: small-caps;
+            font-size: 4vh;
+            color: white;
+            text-decoration: none;
+        }
+        .botao-lista{
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
         }
         .row{
             width: 100vw;
@@ -101,6 +131,11 @@
     </style>
 </head>
 <body>
+    <nav>
+        <div id="nav">
+            <a class="botao-lista" href="/CRUDweb/list_view"> <button class="botao-lista">lista de pacientes <i class="fas fa-clipboard-list"></i></a>
+        </div>
+    </nav>
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div class="card  auth-card">

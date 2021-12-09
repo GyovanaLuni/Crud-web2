@@ -54,13 +54,33 @@
             color: white;
             text-decoration: none;
         }
-        .botao-voltar{
+        button[class^="botao"]:hover{
+            background: none;
+            outline: none;
+            border: none;
+            font-variant: small-caps;
+            font-size: 4vh;
+            color: lightcoral;
+            text-decoration: none;
+            transition: .5s;
+            cursor: pointer;
+        }
+        .botao-sair{
             color: white;
             text-decoration: none;
             cursor: pointer;
             background: none;
             border: none;
             outline: none;
+            cursor: pointer;
+        }
+        .botao-sair:hover{
+            transition: .5s;
+            color: lightcoral;
+        }
+        .botao-sair{
+            color: white;
+            text-decoration: none;
         }
         h1{
             text-align: center;
@@ -152,8 +172,8 @@
 <body>
 <nav>
     <div id="nav">
-        <a href="/CRUDweb/list_view"><button class="botao-voltar"> lista de pacientes <i class="fas fa-clipboard-list"></i></i></button></a>
-        <a class="botao-voltar" href="/accounts/logout"> <button class="botao-sair">sair <i class="fas fa-sign-out-alt"></i></a>
+        <a href="/CRUDweb/list_view"><button class="botao-lista"> lista de pacientes <i class="fas fa-clipboard-list"></i></i></button></a>
+        <a class="botao-sair" href="/accounts/logout"> <button class="botao-sair">sair <i class="fas fa-sign-out-alt"></i></a>
     </div>
 </nav>
     <form class="row g-3" method="POST" enctype="multipart/form-data" action="{% url 'CRUDweb:consulta' %}">

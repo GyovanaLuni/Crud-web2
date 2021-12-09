@@ -17,7 +17,6 @@ def create_view(request):
     return render(request, "create_view.html", context)
 
 
-@login_required
 def list_view(request):
     context = dict()
 
