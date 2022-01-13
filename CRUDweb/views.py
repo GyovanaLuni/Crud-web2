@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from .models import MarcarConsulta
 from .forms import MarcarConsultaForm
 from django.shortcuts import redirect
-
+from rest_framework.permissions import IsAuthenticated
 
 @login_required
 def create_view(request):
@@ -77,3 +77,7 @@ def list_view_id(request, id):
     context["consulta"] = get_object_or_404(MarcarConsulta, id=id)
     # Renderiza  o HTML list_view_id com a consulta que foi clicada para exibir mais detalhes
     return render(request, "list_view_id.html", context)
+
+
+
+permissions_classes = (IsAuthenticated)
