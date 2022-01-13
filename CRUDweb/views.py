@@ -4,6 +4,8 @@ from .models import MarcarConsulta
 from .forms import MarcarConsultaForm
 from django.shortcuts import redirect
 from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import render
+import requests # faz requisições HTTP
 
 @login_required
 def create_view(request):
@@ -77,6 +79,26 @@ def list_view_id(request, id):
     context["consulta"] = get_object_or_404(MarcarConsulta, id=id)
     # Renderiza  o HTML list_view_id com a consulta que foi clicada para exibir mais detalhes
     return render(request, "list_view_id.html", context)
+
+def testecovid(request):
+    api = "https://covid19-brazil-api.now.sh/api/report/v1"
+    requisicao = requests.get(api)
+
+    try:
+        lista = requisicao.json()
+    except ValueError:
+        print("A resposta não chegou com o formato esperado.")
+
+    dicionario = {}
+    print(lista)
+    #for valor in (lista["data"]):
+        #dicionario[indice] = valor
+
+    contexto = {
+        "data": lista['data']
+    }
+
+    return render(request, "teste.html", contexto)
 
 
 

@@ -9,6 +9,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls'), ),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', create_view),
-    path('tokenInsomnia/', TokenObtainPairView.as_view()),
+    path('tokeninsomnia/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
 ]
