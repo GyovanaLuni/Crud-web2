@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,94 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4006/4006511.png" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/LVID.css' %}">
     <title>Listagem</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
-        *{
-            box-sizing: border-box;
-            font-family: 'Baloo Bhaijaan 2', cursive;
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)) 100%, url("https://images.pexels.com/photos/6129448/pexels-photo-6129448.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"), center no-repeat;
-            color: white;
-            width: 100%;
-            font-size: 3.5vh;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-        #container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: .5rem;
-        }
-        #dados{
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            border: .5px solid rgba(255,255,255,.1);
-            width: 50vw;
-            padding: 1rem;
-            background-color: rgba(255,255,255,.0);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        h1{
-            text-align: center;
-            font-variant: small-caps;
-        }
-        h4{
-            text-align: center;
-            font-size: 4vh;
-        }
-        p{margin: 0;}
-        button{
-            background: none;
-            border: none;
-            outline: none;
-        }
-        #btn-voltar{
-            font-size: 5vh;
-            color: white;
-            position: fixed;
-            top: .5rem;
-            left: .5rem;
-            filter: drop-shadow(0 0 3px steelblue);
-            transition: .4s;
-        }
-        #btn-voltar:hover{
-            cursor: pointer;
-            color: steelblue;
-            transform: scale(1.1);
-            filter: none;
-        }
-        .fa-arrow-circle-left{
-            font-size: 5vh;
-        }
-        footer {
-            display: flex;
-            width: 100vw;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            background-color: rgba(255,255,255,.0);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            position: absolute;
-            bottom: 0;
-        }
-        #equipe{
-            font-family: 'Inconsolata', monospace;
-        }
-        .dev{
-            text-decoration: none;
-            color: white;
-        }
-    </style>
 </head>
 <body>
     <h1> consulta </h1>

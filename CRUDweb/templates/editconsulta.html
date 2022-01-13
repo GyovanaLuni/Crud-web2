@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,130 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4006/4006511.png" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/Edit.css' %}">
     <title> Atualizar Dados </title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
-    *{
-        box-sizing: border-box;
-        font-family: 'Baloo Bhaijaan 2', cursive;
-        margin: 0;
-        padding: 0;
-    }
-    body{
-        width: 100vw;
-        height: 100vh;
-        background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)) 100%, url("https://images.pexels.com/photos/207601/pexels-photo-207601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"), center no-repeat;
-        overflow-x: hidden;
-    }
-    #container{
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
-    h1{
-        text-align: center;
-        font-variant: small-caps;
-        font-size: 6vh;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-    }
-    #formulario{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
-    }
-    p{
-        display: flex;
-        gap: .5rem;
-        font-size: 3vh;
-        margin: 0;
-        color: white;
-    }
-    input{
-        height: 4vh;
-        border: none;
-        outline: none;
-        padding: 1.5rem .5rem;
-        border-radius: .5rem;
-        width: 22vw;
-        font-size: 3vh;
-    }
-
-    input[type=submit]{
-        color: white;
-        background-color: #232020;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 6vh;
-        width: 10vw;
-        padding: 0;
-        transition: .5s;
-        font-variant: small-caps;
-        font-size: larger;
-    }
-    input[type=submit]:hover{
-        transform: scale(1.1);
-        cursor: pointer;
-        background-color: #695a5a;
-    }
-    input[type=submit]:active{
-        background-color: darkgreen;
-    }
-    button{
-        background: none;
-        border: none;
-        outline: none;
-    }
-    #btn-voltar{
-        font-size: 5vh;
-        color: white;
-        position: fixed;
-        top: .5rem;
-        left: .5rem;
-        filter: drop-shadow(0 0 3px steelblue);
-        transition: .4s;
-    }
-    #btn-voltar:hover{
-        cursor: pointer;
-        color: steelblue;
-        transform: scale(1.1);
-        filter: none;
-    }
-    .fa-arrow-circle-left{
-        font-size: 5vh;
-    }
-    footer {
-        display: flex;
-        width: 100vw;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        border-top: .5px solid rgba(255,255,255,.5);
-        background-color: rgba(255,255,255,.0);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-    #equipe{
-        font-family: 'Inconsolata', monospace;
-    }
-    .dev{
-        text-decoration: none;
-        color: white;
-    }
-    i{
-        color: white;
-    }
-</style>
 </head>
 <body>
     {% block content %}

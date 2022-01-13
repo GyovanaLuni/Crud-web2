@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    margin: 0;
+    padding: 0;
+    font-size: 3.5vh;
+}
+body{
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)) 100%, url("https://images.pexels.com/photos/6129448/pexels-photo-6129448.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"), center no-repeat;
+    color: white;
+    width: 100vw;
+    font-size: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    overflow-x: hidden;
+}
+#nav{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+button[class^="botao"]{
+    background: none;
+    outline: none;
+    border: none;
+    font-variant: small-caps;
+    font-size: 4vh;
+    color: white;
+    text-decoration: none;
+}
+.botao-sair{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+#listagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25));
+    width: 100vw;
+    padding: 1rem 0;
+}
+.dados-paciente{
+    width: 30vw;
+    text-align: left;
+}
+h1{
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 6vh;
+}
+p{margin: 0;}
+#icons{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.icon{font-variant: small-caps;}
+.icon:hover{
+    text-shadow: 0 0 1.5px rgb(42, 39, 39);
+    cursor: pointer;
+}
+.edit{color: #4c98d7;}
+.delete{color: tomato;}
+.user{color: turquoise;}
+button{
+    background: none;
+    border: none;
+    outline: none;
+}
+#btn-voltar{
+    color: white;
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
+    filter: drop-shadow(0 0 3px steelblue); 
+    transition: .4s;
+}
+.fa-arrow-circle-left{
+    font-size: 5vh;
+}
+#btn-voltar:hover{
+    cursor: pointer;
+    color: steelblue;
+    transform: scale(1.1);
+    filter: none;
+}
+footer {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgba(255,255,255,.0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+#equipe{
+    font-family: 'Inconsolata', monospace;
+}
+.dev{
+    text-decoration: none;
+    color: white;
+}
