@@ -18,12 +18,6 @@ body{
     font-size: 3vh;
     overflow-x: hidden;
 }
-nav{
-    width: 50vw;
-    background-color: rgba(224, 98, 98, 0.44);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
 #nav{
     list-style-type: none;
     display: flex;

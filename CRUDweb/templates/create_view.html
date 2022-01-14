@@ -11,10 +11,17 @@
     <link rel="stylesheet" href="{% static 'css/Create.css' %}">
 </head>
 <body>
-<nav>
+<nav >
     <div id="nav">
-        <a href="/CRUDweb/list_view"><button class="botao-lista"> lista de pacientes <i class="fas fa-clipboard-list"></i></i></button></a>
-        <a class="botao-sair" href="/accounts/logout"> <button class="botao-sair">sair <i class="fas fa-sign-out-alt"></i></a>
+        <a id="covid" href="/CRUDweb/testecovid/"> 
+            <button class="botao-lista">informações covid-19 <i class="fas fa-exclamation-triangle"></i> 
+            </button>
+        </a>
+        <a href="/CRUDweb/list_view">
+            <button class="botao-lista"> lista de pacientes <i class="fas fa-clipboard-list"></i></i></button>
+        </a>
+        <a class="botao-sair" href="/accounts/logout"> <button class="botao-sair">sair <i class="fas fa-sign-out-alt"></i></button>
+        </a>
     </div>
 </nav>
     <form class="row g-3" method="POST" enctype="multipart/form-data" action="{% url 'CRUDweb:consulta' %}">
